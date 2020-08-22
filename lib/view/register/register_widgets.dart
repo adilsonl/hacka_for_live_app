@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/view/mainPage/mainPage.dart';
 import 'package:hacka_for_life/view/register/register_controller.dart';
 
 final RegisterPageController controller = Get.put(RegisterPageController());
@@ -126,7 +127,9 @@ Widget registerButton() {
           style: TextStyle(color: Colors.green),
         ),
         color: Colors.white,
-        onPressed: () async {},
+        onPressed: () async {
+          Get.to(MainPage());
+        },
       ),
     ),
   );
