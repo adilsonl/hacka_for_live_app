@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/view/exame/exame.dart';
 import 'package:hacka_for_life/view/login/login.dart';
 import 'package:hacka_for_life/view/register/register.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       home: LoginPage(),
       getPages: [
         GetPage(name: "/", page: ()=>LoginPage()),
-        GetPage(name: "/register", page: ()=>RegisterPage())
+        GetPage(name: "/register", page: ()=>RegisterPage()),
+        GetPage(name: '/exame', page: ()=>ExamePage())
       ],
     );
   }

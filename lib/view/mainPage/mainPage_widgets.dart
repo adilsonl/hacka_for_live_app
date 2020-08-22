@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 Widget cardExame(BuildContext context) {
-  return Card(
+  return GestureDetector(
+    child: Card(
     color: Colors.green,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -14,6 +16,10 @@ Widget cardExame(BuildContext context) {
         Text("Enviar Exame",style: TextStyle(color:Colors.white),)
       ],
     ),
+  ),
+  onTap: (){
+    Get.toNamed("/exame");
+  },
   );
 }
 
