@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/view/login/login.dart';
+import 'package:hacka_for_life/view/register/register.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: LoginPage(),
+      getPages: [
+        GetPage(name: "/", page: ()=>LoginPage()),
+        GetPage(name: "/register", page: ()=>RegisterPage())
+      ],
     );
   }
 }
