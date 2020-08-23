@@ -20,7 +20,9 @@ Widget emailTextField() {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8, ),
     child: TextField(
-      onChanged: (_value) {},
+      onChanged: (_value) {
+        controller.email.value= _value;
+      },
       style: TextStyle(color: Colors.green),
       decoration: InputDecoration(
         labelText: "E-mail",
@@ -41,7 +43,9 @@ Widget dataTextField() {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8, ),
     child: TextField(
-      onChanged: (_value) {},
+      onChanged: (_value) {
+        controller.dataNasc.value = _value;
+      },
       style: TextStyle(color: Colors.green),
       decoration: InputDecoration(
         labelText: "Data de Nascimento",
@@ -62,7 +66,9 @@ Widget nomeTextField() {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8, ),
     child: TextField(
-      onChanged: (_value) {},
+      onChanged: (_value) {
+        controller.nome.value = _value;
+      },
       style: TextStyle(color: Colors.green),
       decoration: InputDecoration(
         labelText: "Nome",
@@ -128,7 +134,10 @@ Widget registerButton() {
         ),
         color: Colors.white,
         onPressed: () async {
-          Get.to(MainPage());
+          print("dsaf");
+          bool teste = await controller.register(); 
+          if(teste)
+          Get.off(MainPage());
         },
       ),
     ),

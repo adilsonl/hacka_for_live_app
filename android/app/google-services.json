@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "369438550399",
+    "firebase_url": "https://hackaforlife-fd854.firebaseio.com",
+    "project_id": "hackaforlife-fd854",
+    "storage_bucket": "hackaforlife-fd854.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369438550399:android:9a702724fece418171d24a",
+        "android_client_info": {
+          "package_name": "com.example.hacka_for_life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369438550399-kipl7209e9qttctcgvhq0sd5pr32chnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzkVL0a-TfNbK-5omWVcBopLeCGJOSSG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369438550399-kipl7209e9qttctcgvhq0sd5pr32chnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

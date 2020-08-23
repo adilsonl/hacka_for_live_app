@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,14 +12,17 @@ class LoginPageController extends GetxController{
 
   bool _secret = true;
 
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   iconChange(){
     _secret = !_secret;
     obscureText.value = _secret;
     visibilityIcon.value = _secret ? Icons.visibility : Icons.visibility_off;
   }
 
+  
 
-/*   login() async{
+   Future login() async{
     if(email.value.isNullOrBlank || password.value.isNullOrBlank) {
       return 'Senha ou email em branco';
     }else if(!email.value.contains('@') || !email.value.contains('.com')){
@@ -28,10 +32,11 @@ class LoginPageController extends GetxController{
     } else{
       try {
         var _authUser = await _auth.signInWithEmailAndPassword(email: email.value, password: password.value);
+      print(_authUser);
         return 'Aprovado';
       }catch (e){
         return 'Senha errada';
       }
     }
-  } */
+  } 
 }

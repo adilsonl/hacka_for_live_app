@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/view/mainPage/mainPage.dart';
 
 import 'login_controller.dart';
 
@@ -33,6 +34,7 @@ Widget emailTextField() {
     padding: EdgeInsets.symmetric(horizontal: 8),
     child: TextField(
       onChanged: (_value) {
+        controller.email.value=_value;
       },
       style: TextStyle(color:Colors.green),
       decoration: InputDecoration(
@@ -99,6 +101,9 @@ Widget loginButton() {
         ),
         color: Colors.white,
         onPressed: () async {
+         String retorno = await controller.login();
+         if(retorno== "Aprovado")
+            Get.off(MainPage());
         },
       ),
     ),
