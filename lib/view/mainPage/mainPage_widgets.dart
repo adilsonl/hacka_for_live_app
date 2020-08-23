@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hacka_for_life/model/formulario.dart';
 import 'package:hacka_for_life/services/FormServices.dart';
+import 'package:hacka_for_life/view/cuidado/cuidados.dart';
 import 'package:hacka_for_life/view/forms/forms.dart';
 import 'package:hacka_for_life/view/hist/historicoList.dart';
+import 'package:hacka_for_life/view/receitas/receita.dart';
 
 Widget cardExame(BuildContext context) {
   return GestureDetector(
@@ -50,7 +52,8 @@ Widget cardHist(BuildContext context) {
 }
 
 Widget cardReceita(BuildContext context) {
-  return Card(
+  return GestureDetector(
+    child: Card(
     color: Colors.green,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -63,6 +66,10 @@ Widget cardReceita(BuildContext context) {
         Text("Receitas",style: TextStyle(color:Colors.white))
       ],
     ),
+  ),
+  onTap: (){
+    Get.to(ReceitaPage());
+  },
   );
 }
 
@@ -107,7 +114,9 @@ Widget cardForm(BuildContext context) {
 }
 
 Widget cardDicas(BuildContext context) {
-  return Card(
+  return GestureDetector(
+    child: GestureDetector(
+      child:  Card(
     color: Colors.green,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -119,6 +128,11 @@ Widget cardDicas(BuildContext context) {
         ),
         Text("Cuidados",style: TextStyle(color:Colors.white))
       ],
+    ),
+  ),
+  onTap: (){
+    Get.to(CuidadoPage());
+  },
     ),
   );
 }

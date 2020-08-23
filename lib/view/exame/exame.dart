@@ -12,6 +12,7 @@ class ExamePage extends GetWidget{
         title: Text("Exames"),
         centerTitle: true,
         backgroundColor: Colors.green,
+        
       ),
       body: Center(
         child: Column(

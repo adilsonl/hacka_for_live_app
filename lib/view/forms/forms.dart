@@ -26,6 +26,9 @@ class _FormsState extends State<Forms> {
             title: Text("Formularios"),
             centerTitle: true,
             backgroundColor: Colors.green,
+            actions: [
+              Icon(Icons.search)
+            ],
           ),
           body: ListView.builder(
             itemCount: widget.lista.length,

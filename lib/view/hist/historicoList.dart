@@ -12,6 +12,9 @@ class HistoricoList extends GetWidget{
           title: Text("Resultados"),
           centerTitle: true,
           backgroundColor: Colors.green,
+           actions: [
+              Icon(Icons.search)
+            ],
         ),
         body: Column(
           children: [
