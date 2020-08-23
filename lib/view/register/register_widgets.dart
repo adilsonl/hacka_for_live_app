@@ -134,9 +134,8 @@ Widget registerButton() {
         ),
         color: Colors.white,
         onPressed: () async {
-          print("dsaf");
-          bool teste = await controller.register(); 
-          if(teste)
+          bool ok = await controller.register(); 
+          if(ok)
           Get.off(MainPage());
         },
       ),

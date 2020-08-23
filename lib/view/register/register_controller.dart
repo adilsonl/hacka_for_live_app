@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hacka_for_life/model/user.dart';
 import 'package:hacka_for_life/services/UserServices.dart';
+final UserObs userx = Get.put(UserObs());
 
 class RegisterPageController extends GetxController {
   var email = ''.obs;
@@ -29,10 +30,10 @@ class RegisterPageController extends GetxController {
           password.value.length > 6) {
         AuthResult result = await _auth.createUserWithEmailAndPassword(
             email: email.value, password: password.value);
-                    
-        print(result);
         User user = User(nome.value, email.value,result.user.uid,dataNasc: dataNasc.value,pros: [],sexo: sexo.value);
+        
         await UserServices.addUser(user);
+        await UserServices.login(user.uid);
         return true;
       }else{
         return false;

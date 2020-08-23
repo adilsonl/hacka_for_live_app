@@ -2,11 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/model/user.dart';
 import 'package:hacka_for_life/view/mainPage/mainPage.dart';
 
 import 'login_controller.dart';
 
 final LoginPageController controller = Get.put(LoginPageController());
+final UserObs user = Get.put(UserObs());
 
 
 

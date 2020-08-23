@@ -1,13 +1,15 @@
 import 'package:get/get.dart';
 
 class UserObs{
-
+  var id = "".obs;
   var nome = "".obs;
   var email = "".obs;
   var uid = "".obs;
   var sexo = "".obs;
   var dataNasc = "".obs;
   var pros = [].obs;
+
+
 }
 
 class User{

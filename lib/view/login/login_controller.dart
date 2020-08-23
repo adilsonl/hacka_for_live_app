@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/services/UserServices.dart';
 
 class LoginPageController extends GetxController{
 
@@ -31,8 +32,8 @@ class LoginPageController extends GetxController{
       return 'Senha muito curta';
     } else{
       try {
-        var _authUser = await _auth.signInWithEmailAndPassword(email: email.value, password: password.value);
-      print(_authUser);
+        AuthResult _authUser = await _auth.signInWithEmailAndPassword(email: email.value, password: password.value);
+        UserServices.login(_authUser.user.uid);
         return 'Aprovado';
       }catch (e){
         return 'Senha errada';

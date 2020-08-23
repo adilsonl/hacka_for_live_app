@@ -38,5 +38,8 @@ Widget sendButton(){
   return RaisedButton(
     color: Colors.green,
     child: Text("Enviar",style: TextStyle(color: Colors.white,),),
-    onPressed: (){});
+    onPressed: (){
+      controller.uploadImagens();
+      controller.clearExames();
+    });
 }
