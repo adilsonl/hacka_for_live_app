@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/model/user.dart';
 import 'package:hacka_for_life/view/mainPage/mainPage_widgets.dart';
+final UserObs user = Get.put(UserObs());
 
 class MainPage extends GetWidget{
 
@@ -12,17 +14,18 @@ class MainPage extends GetWidget{
       appBar: AppBar(
         backgroundColor: Colors.green,
         centerTitle: true,
-        title: Text("Nome"),
+        title: Obx(()=>Text(user.nome.value)),
       ),
       body: GridView.count(
         crossAxisCount: 2,
         children: [
-          cardExame(context),
+         cardExame(context),
+         cardForm(context),
          cardHist(context),
          cardReceita(context),
-         cardLab(context),
-         cardFarm(context),
-         cardForm(context)
+         cardDicas(context),
+         cardAjuda(context)
+     
         ],
         ),
     ));
