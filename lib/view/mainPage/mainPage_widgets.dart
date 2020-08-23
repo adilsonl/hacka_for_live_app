@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hacka_for_life/model/formulario.dart';
+import 'package:hacka_for_life/services/FormServices.dart';
+import 'package:hacka_for_life/view/forms/forms.dart';
 
 Widget cardExame(BuildContext context) {
   return GestureDetector(
@@ -75,19 +78,25 @@ Widget cardLab(BuildContext context) {
 }
 
 Widget cardForm(BuildContext context) {
-  return Card(
+  return GestureDetector(
+    child:  Card(
     color: Colors.green,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          Icons.edit,
+          Icons.format_list_numbered,
           size: MediaQuery.of(context).size.height * 0.1,
           color: Colors.white
         ),
         Text("Formulários",style: TextStyle(color:Colors.white))
       ],
     ),
+  ),
+  onTap: ()async{
+    List<Formulario> list = await FormServices.getForms();
+    Get.to(Forms(list));
+  },
   );
 }
 

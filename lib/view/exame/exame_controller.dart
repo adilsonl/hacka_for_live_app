@@ -16,8 +16,7 @@ class ExameController extends GetxController {
           .putFile(element);
       task.onComplete.then((value) {});
     });
-  }
-
+  } 
   clearExames(){
     listExams.clear();
   }
