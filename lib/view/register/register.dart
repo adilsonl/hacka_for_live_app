@@ -15,6 +15,7 @@ class RegisterPage extends GetWidget{
             dataTextField(),
             passTextField(),
             radioButton(),
+            termosdeUso(),
             registerButton()
           ],
         ),

@@ -18,10 +18,13 @@ Widget clipPath() {
 
 Widget emailTextField() {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8, ),
+    padding: EdgeInsets.symmetric(
+      horizontal: 8,
+      vertical: 8,
+    ),
     child: TextField(
       onChanged: (_value) {
-        controller.email.value= _value;
+        controller.email.value = _value;
       },
       style: TextStyle(color: Colors.green),
       decoration: InputDecoration(
@@ -41,7 +44,10 @@ Widget emailTextField() {
 
 Widget dataTextField() {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8, ),
+    padding: EdgeInsets.symmetric(
+      horizontal: 8,
+      vertical: 8,
+    ),
     child: TextField(
       onChanged: (_value) {
         controller.dataNasc.value = _value;
@@ -64,7 +70,10 @@ Widget dataTextField() {
 
 Widget nomeTextField() {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8, ),
+    padding: EdgeInsets.symmetric(
+      horizontal: 8,
+      vertical: 8,
+    ),
     child: TextField(
       onChanged: (_value) {
         controller.nome.value = _value;
@@ -134,9 +143,8 @@ Widget registerButton() {
         ),
         color: Colors.white,
         onPressed: () async {
-          bool ok = await controller.register(); 
-          if(ok)
-          Get.off(MainPage());
+          bool ok = await controller.register();
+          if (ok) Get.off(MainPage());
         },
       ),
     ),
@@ -146,46 +154,66 @@ Widget registerButton() {
 Widget radioButton() {
   return Padding(
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-      child:Obx(()=> Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Radio(
-            value: "Masculino",
-             groupValue: controller.sexo.value,
-            onChanged: (_value) {
-              controller.sexo.value = _value;
-              print(_value);
-            },
-          ),
-          Text(
-            'Masculino',
-            style: new TextStyle(fontSize: 16.0),
-          ),
-          Radio(
-            value: "Feminino",
-            groupValue: controller.sexo.value,
-            onChanged: (_value) {
-              controller.sexo.value = _value;
-            },
-          ),
-          Text(
-            'Feminino',
-            style: TextStyle(
-              fontSize: 16.0,
-            ),
-          ),
-          Radio(
-            value: 'Outro',
-            groupValue: controller.sexo.value,
-            onChanged: (_value) {
-              controller.sexo.value = _value;
-            },
-          ),
-          Text(
-            'Outro',
-            style: TextStyle(fontSize: 16.0),
-          ),
-        ],
-      )));
+      child: Obx(() => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Radio(
+                value: "Masculino",
+                groupValue: controller.sexo.value,
+                onChanged: (_value) {
+                  controller.sexo.value = _value;
+                  print(_value);
+                },
+              ),
+              Text(
+                'Masculino',
+                style: new TextStyle(fontSize: 16.0),
+              ),
+              Radio(
+                value: "Feminino",
+                groupValue: controller.sexo.value,
+                onChanged: (_value) {
+                  controller.sexo.value = _value;
+                },
+              ),
+              Text(
+                'Feminino',
+                style: TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+              Radio(
+                value: 'Outro',
+                groupValue: controller.sexo.value,
+                onChanged: (_value) {
+                  controller.sexo.value = _value;
+                },
+              ),
+              Text(
+                'Outro',
+                style: TextStyle(fontSize: 16.0),
+              ),
+            ],
+          )));
 }
 
+Widget termosdeUso() {
+  return Row(
+    children: [
+      Checkbox(value: true, onChanged: (v){}),
+      Text.rich(
+        TextSpan(
+          text: 'Aceito ',
+          children: <TextSpan>[
+            TextSpan(
+                text: 'Termos de Uso',
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                )),
+            // can add more TextSpans here...
+          ],
+        ),
+      )
+    ],
+  );
+}

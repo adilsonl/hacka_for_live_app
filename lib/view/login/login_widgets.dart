@@ -99,9 +99,9 @@ Widget loginButton() {
       child: RaisedButton(
         child: Text(
           "Login",
-          style: TextStyle(color: Colors.green),
+          style: TextStyle(color: Colors.white),
         ),
-        color: Colors.white,
+        color: Colors.green,
         onPressed: () async {
          String retorno = await controller.login();
          if(retorno== "Aprovado")
